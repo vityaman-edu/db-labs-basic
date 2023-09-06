@@ -1,0 +1,66 @@
+@startuml Lab 1 Object Model
+
+interface Object
+
+Creature --> Object
+interface Creature
+
+MysteriousCreature --> Creature
+class MysteriousCreature
+
+Plant --> Object
+interface Plant
+
+Animal --> Creature
+interface Animal
+
+Tree --> Plant
+class Tree
+
+Dinosaur --> Animal
+class Dinosaur
+
+Human --> Animal
+interface Human
+
+Baby --> Human
+class Baby
+
+interface Action
+
+Cackling --> Action
+class Cackling
+
+Pushing --> Action
+class Pushing
+
+Move --> Action
+interface Move 
+
+Trailing --> Move
+Trailing --* Target
+class Trailing
+
+Going --> Move
+Going --* Target
+class Going
+
+interface Target
+
+Down --> Target
+class Down
+
+Away --> Target
+class Away
+
+interface Emotion
+
+Impression --> Emotion
+class Impression
+
+Pain --> Emotion
+class Pain
+
+
+
+@enduml
