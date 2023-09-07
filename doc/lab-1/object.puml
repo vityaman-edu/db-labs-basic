@@ -3,7 +3,10 @@
 interface Object
 
 Creature --> Object
-interface Creature
+Creature --* Action
+interface Creature {
+    action: Action
+}
 
 MysteriousCreature --> Creature
 class MysteriousCreature
@@ -12,7 +15,23 @@ Plant --> Object
 interface Plant
 
 Animal --> Creature
-interface Animal
+Animal --* Gender
+Animal --* Emotion
+interface Animal {
+    name: String
+    gender: GenderEmotion
+    emotions: Collection[Emotion]
+}
+
+enum Gender {
+    MALE
+    FEMALE
+}
+
+enum Emotion {
+    IMPRESSION
+    PAIN
+}
 
 Tree --> Plant
 class Tree
@@ -52,15 +71,5 @@ class Down
 
 Away --> Target
 class Away
-
-interface Emotion
-
-Impression --> Emotion
-class Impression
-
-Pain --> Emotion
-class Pain
-
-
 
 @enduml
