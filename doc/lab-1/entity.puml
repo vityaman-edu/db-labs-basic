@@ -1,4 +1,4 @@
-@startuml Lab 1 Entity-Relation MachineBorderColor
+@startuml Lab 1 Entity-Relation Diagram
 
 entity creature {
     id: int <<generated>>
