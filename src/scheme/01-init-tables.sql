@@ -51,3 +51,14 @@ CREATE TABLE creature (
     location_id int NOT NULL references location(id),
     mother_id int references creature(id)
 );
+
+
+CREATE TABLE creature_emotion (
+    creature_id int references creature(id),
+    emotion_id int references emotion(id)
+);
+
+CREATE TABLE creature_action (
+    creature_id int references creature(id),
+    action_id int references action(id)
+);
