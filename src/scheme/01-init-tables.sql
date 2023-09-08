@@ -38,7 +38,7 @@ CREATE TABLE emotion (
 );
 
 
-CREATE TYPE gender AS ENUM ('male', 'female');
+CREATE TYPE gender AS ENUM ('male', 'female', 'unknown');
 
 
 CREATE SEQUENCE seq_creature_id START 1;
