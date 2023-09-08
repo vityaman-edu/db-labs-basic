@@ -1,7 +1,7 @@
 @startuml Lab 1 Entity-Relation Diagram
 
 entity creature {
-    id: int <<generated>>
+    id: int <<PK>>
     --
     name: text
     kind_id: int <<FK>>
@@ -11,14 +11,14 @@ entity creature {
 }
 
 entity emotion {
-    id: int <<generated>>
+    id: int <<PK>>
     --
     name: text
     description: text
 }
 
 entity action {
-    id: int <<generated>>
+    id: int <<PK>>
     --
     name: text
     description: text
@@ -30,13 +30,13 @@ enum gender {
 }
 
 entity location {
-    id: int <<generated>>
+    id: int <<PK>>
     --
     name: text
 }
 
 entity kind {
-    id: int <<generated>>
+    id: int <<PK>>
     --
     name: text
 }
