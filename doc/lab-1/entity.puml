@@ -1,0 +1,71 @@
+@startuml Lab 1 Entity-Relation MachineBorderColor
+
+entity creature {
+    id: int <<generated>>
+    --
+    name: text
+    kind_id: int <<FK>>
+    gender: gender
+    location_id: int <<FK>>
+    mother_id: int <<FK>>
+}
+
+entity emotion {
+    id: int <<generated>>
+    --
+    name: text
+    description: text
+}
+
+entity action {
+    id: int <<generated>>
+    --
+    name: text
+    description: text
+}
+
+enum gender {
+    MALE
+    FEMALE
+}
+
+entity location {
+    id: int <<generated>>
+    --
+    name: text
+}
+
+entity kind {
+    id: int <<generated>>
+    --
+    name: text
+}
+
+creature }|--||kind
+creature --o gender
+creature }|--||location
+creature }|--|{ emotion
+creature }|--|{ action
+creature ||--|| creature
+
+entity creature_emotion {
+    creature_id: int <<FK>>
+    emotion_id: int <<FK>>
+}
+
+entity creature_action {
+    creature_id: int <<FK>>
+    action_id: int <<FK>>
+}
+
+note left of creature
+  Как бы там ни было, вид спускающихся 
+  с дерева загадочных существ
+  произвел слишком тягостное 
+  впечатление на динозавриху. Загоготав
+  на прощание, животное подтолкнуло 
+  малыша и медленно поплелось
+  прочь. 
+end note
+
+@enduml

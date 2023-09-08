@@ -1,0 +1,75 @@
+@startuml Lab 1 Object Model
+
+interface Object
+
+Creature --> Object
+Creature --* Action
+interface Creature {
+    action: Action
+}
+
+MysteriousCreature --> Creature
+class MysteriousCreature
+
+Plant --> Object
+interface Plant
+
+Animal --> Creature
+Animal --* Gender
+Animal --* Emotion
+interface Animal {
+    name: String
+    gender: GenderEmotion
+    emotions: Collection[Emotion]
+}
+
+enum Gender {
+    MALE
+    FEMALE
+}
+
+enum Emotion {
+    IMPRESSION
+    PAIN
+}
+
+Tree --> Plant
+class Tree
+
+Dinosaur --> Animal
+class Dinosaur
+
+Human --> Animal
+interface Human
+
+Baby --> Human
+class Baby
+
+interface Action
+
+Cackling --> Action
+class Cackling
+
+Pushing --> Action
+class Pushing
+
+Move --> Action
+interface Move 
+
+Trailing --> Move
+Trailing --* Target
+class Trailing
+
+Going --> Move
+Going --* Target
+class Going
+
+interface Target
+
+Down --> Target
+class Down
+
+Away --> Target
+class Away
+
+@enduml
