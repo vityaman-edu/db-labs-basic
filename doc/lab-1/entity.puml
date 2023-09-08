@@ -41,22 +41,12 @@ entity kind {
     name: text
 }
 
-creature }|--||kind
+creature --||kind
 creature --o gender
-creature }|--||location
-creature }|--|{ emotion
-creature }|--|{ action
-creature ||--|| creature
-
-entity creature_emotion {
-    creature_id: int <<FK>>
-    emotion_id: int <<FK>>
-}
-
-entity creature_action {
-    creature_id: int <<FK>>
-    action_id: int <<FK>>
-}
+creature --||location
+creature --|{ emotion
+creature --|{ action
+creature --o| creature
 
 note left of creature
   Как бы там ни было, вид спускающихся 
