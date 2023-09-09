@@ -1,25 +1,30 @@
 @startuml High-level ER-Diagram
 
-entity creature {}
-entity emotion {}
-entity action {}
-entity location {}
-entity kind {}
+entity creature {
+  name
+  gender
+}
 
-creature --||kind
-creature --||location
-creature --|{ emotion
-creature --|{ action
-creature --o| creature
+entity emotion {
+  name
+}
 
-note left of creature
-  Как бы там ни было, вид спускающихся 
-  с дерева загадочных существ
-  произвел слишком тягостное 
-  впечатление на динозавриху. Загоготав
-  на прощание, животное подтолкнуло 
-  малыша и медленно поплелось
-  прочь. 
-end note
+entity action {
+  name
+}
+
+entity location {
+  name
+}
+
+entity kind {
+  name
+}
+
+creature --||kind : who
+creature --||location : where
+creature --|{ emotion : feels
+creature --|{ action : doing
+creature --o| creature : mother
 
 @enduml

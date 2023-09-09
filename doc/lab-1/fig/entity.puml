@@ -7,7 +7,7 @@ entity creature {
     kind_id: int <<FK>>
     gender: gender
     location_id: int <<FK>>
-    mother_id: int <<FK>>
+    mother_id: int? <<FK>>
 }
 
 entity emotion {
@@ -42,21 +42,28 @@ entity kind {
     name: text
 }
 
-creature --||kind
-creature --o gender
-creature --||location
-creature --|{ emotion
-creature --|{ action
-creature --o| creature
+entity creature_emotion {
+    creature_id: int <<FK>>
+    emotion_id: int <<FK>>
+}
 
-note left of creature
-  Как бы там ни было, вид спускающихся 
-  с дерева загадочных существ
-  произвел слишком тягостное 
-  впечатление на динозавриху. Загоготав
-  на прощание, животное подтолкнуло 
-  малыша и медленно поплелось
-  прочь. 
-end note
+entity creature_action {
+    creature_id: int <<FK>>
+    action_id: int <<FK>>
+}
+
+creature --||kind : kind_id
+creature --||location : location_id
+creature --o| creature : mother_id
+
+creature --|{ emotion
+creature -- creature_emotion
+creature_emotion -- emotion
+
+creature --|{ action
+creature -- creature_action
+creature_action -- action
+
+creature --o gender
 
 @enduml
