@@ -1,9 +1,6 @@
 -- Scheme Migration #1: Initialize Tables
 -- Diagram: doc/lab-1/entity.puml
 
-DROP SCHEMA public CASCADE;
-CREATE SCHEMA public;
-
 CREATE SEQUENCE seq_kind_id START 1;
 
 CREATE TABLE kind (
@@ -55,10 +52,12 @@ CREATE TABLE creature (
 
 CREATE TABLE creature_emotion (
     creature_id int references creature(id),
-    emotion_id int references emotion(id)
+    emotion_id int references emotion(id),
+    PRIMARY KEY (creature_id, emotion_id)
 );
 
 CREATE TABLE creature_action (
     creature_id int references creature(id),
-    action_id int references action(id)
+    action_id int references action(id),
+    PRIMARY KEY (creature_id, action_id)
 );
