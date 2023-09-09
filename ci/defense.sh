@@ -10,7 +10,7 @@ run() {
         -h localhost -p 5432 \
         -d $DATABASE_NAME \
         -U $DATABASE_USER \
-        -a -f $PROJECT/src/$1
+        -a -f src/$1
 }
 
 echo "[defense] Initializing database..."
