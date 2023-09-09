@@ -1,6 +1,9 @@
 
 run() {
-    psql -h localhost -p 5432 -d postgres -U postgres \
+    psql \
+        -h localhost -p 5432 \
+        -d postgres \
+        -U postgres \
         -a -f project/src/$1
 }
 
