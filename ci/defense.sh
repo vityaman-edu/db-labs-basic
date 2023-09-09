@@ -1,4 +1,7 @@
-PROJECT=project
+set -o errexit
+cd $(dirname -- "$0"; )
+cd ..
+
 DATABASE_NAME=postgres
 DATABASE_USER=postgres
 
