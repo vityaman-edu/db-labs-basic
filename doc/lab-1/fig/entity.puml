@@ -1,0 +1,69 @@
+@startuml Lab 1 Entity-Relation Diagram
+
+entity creature {
+    id: int <<PK>>
+    --
+    name: text
+    kind_id: int <<FK>>
+    gender: gender
+    location_id: int <<FK>>
+    mother_id: int? <<FK>>
+}
+
+entity emotion {
+    id: int <<PK>>
+    --
+    name: text
+    description: text
+}
+
+entity action {
+    id: int <<PK>>
+    --
+    name: text
+    description: text
+}
+
+enum gender {
+    MALE
+    FEMALE
+    UNKNOWN
+}
+
+entity location {
+    id: int <<PK>>
+    --
+    name: text
+}
+
+entity kind {
+    id: int <<PK>>
+    --
+    name: text
+}
+
+entity creature_emotion {
+    creature_id: int <<FK>>
+    emotion_id: int <<FK>>
+}
+
+entity creature_action {
+    creature_id: int <<FK>>
+    action_id: int <<FK>>
+}
+
+creature --||kind : kind_id
+creature --||location : location_id
+creature --o| creature : mother_id
+
+creature --|{ emotion
+creature -- creature_emotion
+creature_emotion -- emotion
+
+creature --|{ action
+creature -- creature_action
+creature_action -- action
+
+creature --o gender
+
+@enduml

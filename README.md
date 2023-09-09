@@ -9,8 +9,21 @@
 
 ## Build & Run
 
+### SQL
+
 ```bash
 docker compose up
 docker exec -t db-lab-basic-model-db-1 bash
 bash project/ci/defense.sh
+```
+
+### Report
+
+Перед сборкой важно убедиться,
+что все диаграммы в отчете 
+актуальны, то есть соответсвуют
+файлам `.puml`.
+
+```bash
+git clean -Xdf
 ```
