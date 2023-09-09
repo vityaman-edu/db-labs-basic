@@ -1,10 +1,13 @@
+PROJECT=project
+DATABASE_NAME=postgres
+DATABASE_USER=postgres
 
 run() {
     psql \
         -h localhost -p 5432 \
-        -d postgres \
-        -U postgres \
-        -a -f project/src/$1
+        -d $DATABASE_NAME \
+        -U $DATABASE_USER \
+        -a -f $PROJECT/src/$1
 }
 
 echo "[defense] Initializing database..."
