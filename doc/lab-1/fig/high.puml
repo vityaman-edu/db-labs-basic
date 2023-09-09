@@ -1,0 +1,25 @@
+@startuml High-level ER-Diagram
+
+entity creature {}
+entity emotion {}
+entity action {}
+entity location {}
+entity kind {}
+
+creature --||kind
+creature --||location
+creature --|{ emotion
+creature --|{ action
+creature --o| creature
+
+note left of creature
+  Как бы там ни было, вид спускающихся 
+  с дерева загадочных существ
+  произвел слишком тягостное 
+  впечатление на динозавриху. Загоготав
+  на прощание, животное подтолкнуло 
+  малыша и медленно поплелось
+  прочь. 
+end note
+
+@enduml

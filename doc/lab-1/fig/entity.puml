@@ -27,6 +27,7 @@ entity action {
 enum gender {
     MALE
     FEMALE
+    UNKNOWN
 }
 
 entity location {
