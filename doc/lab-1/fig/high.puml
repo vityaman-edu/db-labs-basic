@@ -5,6 +5,10 @@ entity creature {
   gender
 }
 
+entity dream {
+  description
+}
+
 entity emotion {
   name
 }
@@ -21,10 +25,13 @@ entity kind {
   name
 }
 
+
+
 creature }o-d-||kind : who
 creature }o-d-||location : where
 creature }o-d-|{ emotion : feels
 creature }o-d-|{ action : doing
 creature }o-d-o| creature : mother
+creature ||-l-|| dream : dreams
 
 @enduml

@@ -8,6 +8,13 @@ entity creature {
     gender: gender
     location_id: int <<FK>>
     mother_id: int? <<FK>>
+    dream_id: int <<FK>>
+}
+
+entity dream { 
+    owner_id: int <<PK, FK>>
+    --
+    description: text
 }
 
 entity emotion {
@@ -52,15 +59,16 @@ entity creature_action {
     action_id: int <<FK>>
 }
 
-creature --||kind : kind_id
-creature --||location : location_id
-creature --o| creature : mother_id
+creature }o-d-||kind : kind_id
+creature }o-d-||location : location_id
+creature }o-d-o| creature : mother_id
+creature ||-l-|| dream : owner_id
 
-creature --|{ emotion
+creature }o-d-|{ emotion
 creature -- creature_emotion
 creature_emotion -- emotion
 
-creature --|{ action
+creature }o-d-|{ action
 creature -- creature_action
 creature_action -- action
 
