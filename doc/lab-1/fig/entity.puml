@@ -8,7 +8,6 @@ entity creature {
     gender: gender
     location_id: int <<FK>>
     mother_id: int? <<FK>>
-    dream_id: int <<FK>>
 }
 
 entity dream { 

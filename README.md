@@ -13,7 +13,7 @@
 
 ```bash
 docker compose up
-docker exec -t db-lab-basic-model-db-1 bash
+docker exec -it db-lab-basic-model-db-1 bash
 bash project/ci/defense.sh
 ```
 

@@ -64,3 +64,18 @@ INSERT INTO creature_action (creature_id, action_id)
     SELECT creature.id, action.id FROM creature, action
     WHERE creature.name = 'Dino-Child'
       AND action.name IN ('Sitting');
+
+INSERT INTO dream (owner_id, description)
+  SELECT id, 'To be happy and fall in love with some other creature' 
+  FROM creature 
+  WHERE creature.name = 'Kostyan';
+
+INSERT INTO dream (owner_id, description)
+  SELECT id, 'To rise up a decent and strong child' 
+  FROM creature 
+  WHERE creature.name = 'Dino-Mother';
+
+INSERT INTO dream (owner_id, description)
+  SELECT id, 'To pass databases course on se.ifmo.ru' 
+  FROM creature 
+  WHERE creature.name = 'Dino-Child';

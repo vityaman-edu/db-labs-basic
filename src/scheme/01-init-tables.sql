@@ -52,6 +52,11 @@ CREATE TABLE creature (
     mother_id int references creature(id)
 );
 
+CREATE TABLE dream (
+    owner_id int PRIMARY KEY references creature(id),
+    description text NOT NULL
+);
+
 CREATE TABLE creature_emotion (
     creature_id int references creature(id),
     emotion_id int references emotion(id),
