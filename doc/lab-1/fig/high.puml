@@ -21,10 +21,10 @@ entity kind {
   name
 }
 
-creature --||kind : who
-creature --||location : where
-creature --|{ emotion : feels
-creature --|{ action : doing
-creature --o| creature : mother
+creature }o-d-||kind : who
+creature }o-d-||location : where
+creature }o-d-|{ emotion : feels
+creature }o-d-|{ action : doing
+creature }o-d-o| creature : mother
 
 @enduml
