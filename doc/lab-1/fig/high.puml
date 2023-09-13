@@ -1,0 +1,37 @@
+@startuml High-level ER-Diagram
+
+entity creature {
+  name
+  gender
+}
+
+entity dream {
+  description
+}
+
+entity emotion {
+  name
+}
+
+entity action {
+  name
+}
+
+entity location {
+  name
+}
+
+entity kind {
+  name
+}
+
+
+
+creature }o-d-||kind : who
+creature }o-d-||location : where
+creature }o-d-|{ emotion : feels
+creature }o-d-|{ action : doing
+creature }o-d-o| creature : mother
+creature ||-l-|| dream : dreams
+
+@enduml
