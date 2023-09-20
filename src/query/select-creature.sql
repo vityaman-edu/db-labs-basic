@@ -3,8 +3,12 @@ SELECT creature.id,
        creature.gender, 
        kind.name as kind,
        location.name as location,
+       location.x,
+       location.y,
+       location.z,
        mother.name as mother,
-       dream.description as dream
+       dream.description as dream,
+       dream.difficulty
 FROM creature
 JOIN kind ON creature.kind_id = kind.id
 JOIN location ON creature.location_id = location.id
