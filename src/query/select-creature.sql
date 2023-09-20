@@ -1,6 +1,7 @@
 SELECT creature.id, 
        creature.name, 
        creature.gender, 
+       creature.birthday, 
        kind.name as kind,
        location.name as location,
        location.x,
