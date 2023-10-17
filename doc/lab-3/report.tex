@@ -1,0 +1,138 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{setspace}
+\usepackage{changepage}
+\usepackage{caption}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\pgfplotsset{compat=1.18}
+\hypersetup{
+  colorlinks = true,
+  linkcolor  = blue,
+  filecolor  = magenta,      
+  urlcolor   = darkgray,
+  pdftitle   = {
+    database-report-3-smirnov-victor-p33131
+  },
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.99,0.99,0.99}
+
+\lstdefinestyle{codestyle}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\graphicspath{ {./img/} }
+
+\lstset{style=codestyle}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \begin{spacing}{1.4}
+            \large{Университет ИТМО} \\
+            \large{Факультет программной инженерии и компьютерной техники} \
+        \end{spacing}
+        \vfill
+        \textbf{
+            \huge{Базы данных.} \\
+            \huge{Лабораторная работа №3.} \\
+        }
+    \end{center}
+    \vfill
+    \begin{center}
+        \begin{tabular}{r l}
+            Группа:  & P33131                  \\
+            Студент: & Смирнов Виктор Игоревич \\
+            Вариант: & 3313103
+        \end{tabular}
+    \end{center}
+    \vfill
+    \begin{center}
+        \begin{large}
+            2023
+        \end{large}
+    \end{center}
+\end{titlepage}
+
+\section*{Ключевые слова}
+
+База данных
+
+\tableofcontents
+
+\section{Цель работы}
+
+Научиться писать запросы к БД.
+
+\section{Задача}
+
+Составить запросы на языке SQL (пункты 1-7).
+
+Сделать запрос для получения атрибутов из указанных таблиц, 
+применив фильтры по указанным условиям:
+Н\_ТИПЫ\_ВЕДОМОСТЕЙ, Н\_ВЕДОМОСТИ.
+Вывести атрибуты: Н\_ТИПЫ\_ВЕДОМОСТЕЙ.ИД, Н\_ВЕДОМОСТИ.ЧЛВК\_ИД.
+Фильтры (AND):
+a) Н\_ТИПЫ\_ВЕДОМОСТЕЙ.НАИМЕНОВАНИЕ = Перезачет.
+b) Н\_ВЕДОМОСТИ.ДАТА > 2022-06-08.
+c) Н\_ВЕДОМОСТИ.ДАТА = 2010-06-18.
+Вид соединения: RIGHT JOIN.
+Сделать запрос для получения атрибутов из указанных таблиц, применив фильтры по указанным условиям:
+Таблицы: Н\_ЛЮДИ, Н\_ВЕДОМОСТИ, Н\_СЕССИЯ.
+Вывести атрибуты: Н\_ЛЮДИ.ИД, Н\_ВЕДОМОСТИ.ИД, Н\_СЕССИЯ.ИД.
+Фильтры (AND):
+a) Н\_ЛЮДИ.ИМЯ > Николай.
+b) Н\_ВЕДОМОСТИ.ДАТА < 2010-06-18.
+Вид соединения: RIGHT JOIN.
+Вывести число студентов вечерней формы обучения, которые не имеет отчества.
+Ответ должен содержать только одно число.
+Найти группы, в которых в 2011 году было ровно 5 обучающихся студентов на ФКТИУ.
+Для реализации использовать подзапрос.
+Выведите таблицу со средними оценками студентов группы 4100 (Номер, ФИО, Ср\_оценка), у которых средняя оценка меньше средней оценк(е|и) в группе 1101.
+Получить список студентов, зачисленных до первого сентября 2012 года на первый курс очной формы обучения. В результат включить:
+номер группы;
+номер, фамилию, имя и отчество студента;
+номер и состояние пункта приказа;
+Для реализации использовать соединение таблиц.
+Вывести список студентов, имеющих одинаковые фамилии, но не совпадающие даты рождения.
+
+\section{Вывод}
+
+
+% \begin{thebibliography}{9}
+    
+% \end{thebibliography}
+
+\end{document}
